@@ -9,6 +9,8 @@ namespace AzureDemo
             // Add services to the container.
             builder.Services.AddRazorPages();
 
+            builder.Logging.AddAzureWebAppDiagnostics();
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
