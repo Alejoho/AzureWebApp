@@ -14,7 +14,7 @@ namespace AzureDemo.Pages
 
         public void OnGet()
         {
-
+            _logger.LogError("This is my test error. Alejo");
         }
     }
 }
