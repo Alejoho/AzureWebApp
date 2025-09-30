@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Logging.AzureAppServices;
+
 namespace AzureDemo
 {
     public class Program
@@ -10,6 +12,13 @@ namespace AzureDemo
             builder.Services.AddRazorPages();
 
             builder.Logging.AddAzureWebAppDiagnostics();
+
+            builder.Services.Configure<AzureFileLoggerOptions>(options =>
+            {
+                options.FileName = "LogM-";
+                options.FileSizeLimit = 50 * 1024;
+                options.RetainedFileCountLimit = 5;
+            });
 
             var app = builder.Build();
 
