@@ -14,7 +14,9 @@ namespace AzureDemo.Pages
 
         public void OnGet()
         {
-            _logger.LogError("This is my test error. Alejo");
+            _logger.LogCritical("This is my test for critical log messages. Alejo");
+            _logger.LogError("This is my test for error log messages. Alejo");
+            _logger.LogWarning("This is my test for warning log messages. Alejo");
         }
     }
 }
